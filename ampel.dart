@@ -1,10 +1,10 @@
 
 import 'dart:io';
 void main() {
-  String actualSituation = "Straße2grün";
-  String actualHumansLight;
+  String actualSituation = "Straße1grün";
+  bool continueLoop = true;
 
-  while(true) {    
+  while(continueLoop) {                               // Die While-Schleife ist immer true und läuft somit weiter bis ich sie unterbreche.
     switch (actualSituation) {
 
       case "Straße1grün":
@@ -12,21 +12,22 @@ void main() {
         print("Straße 1 grün | Straße 2 rot | Fußgänger 1 rot | Fußgänger 2 grün");
         print("");
         print("""
-                      |        |
-                      |        |
-                      |  STOP  | 
+                    |     |     |
+                    |           |
+                    |    STOP   | 
           ----------------------------------
            <<<<<<<      <<<<<<<      <<<<<<<
-           -     -     -   GO  -     -     -
+           -     -  Straße 1 GO  -     -    
            >>>>>>>      >>>>>>>      >>>>>>>
           ----------------------------------
-                      |  STOP  |
-                      |        |
-                      |        |
+                    |    STOP   |
+                    |     |     |
+                    |           |
                     """);
+        
         sleep(Duration(seconds:5));
         actualSituation = "Straße2grün";
-        actualHumansLight = "Übergang1grün";
+      
         break;
 
       case "Straße2grün":
@@ -37,7 +38,7 @@ void main() {
                     |  V     ^  |
                     |  V  |  ^  | 
           ----------|           |-------------           
-                   S|     |     |S
+                   S|  Straße 2 |S
           -     -  T|     GO    |T    -     -
                    O|     |     |O
                    P|           |P
@@ -46,9 +47,10 @@ void main() {
                     |  V  |  ^  |
                     |  V     ^  |
                     """);
+        
         sleep(Duration(seconds:5));
         actualSituation = "Straße1grün";
-        actualHumansLight = "Übergang2grün";
+      
         break;
 
       default:
